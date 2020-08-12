@@ -21,17 +21,6 @@ pipeline {
               echo 'finsh init'
           }
       }
-      stage("workspace") {
-          steps {
-              sh """
-terraform workspace select jenkins-lab2
-if [[ \$? -ne 0 ]]; then
-  terraform workspace new jenkins-lab2
-fi
-"""
-              echo 'finsh workspace'
-          }
-      }
       stage("plan") {
           steps {
               sh 'make plan'
