@@ -18,6 +18,7 @@ pipeline {
       stage("init") {
           steps {
               sh 'make init'
+              echo 'finsh init'
           }
       }
       stage("workspace") {
@@ -28,6 +29,7 @@ if [[ \$? -ne 0 ]]; then
   terraform workspace new jenkins-lab2
 fi
 """
+              echo 'finsh workspace'
           }
       }
       stage("plan") {
