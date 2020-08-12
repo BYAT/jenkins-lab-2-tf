@@ -55,8 +55,8 @@ resource "aws_vpc" "lab" {
   enable_dns_hostnames = true
 }
 
-resource "aws_route53_zone" "bryan_dobc" {
-  name = "bryan.dobc"
+resource "aws_route53_zone" "bashayr_dobc" {
+  name = "bashayr.dobc"
   tags = module.tags_network.tags
 
   vpc {
@@ -155,7 +155,7 @@ resource "aws_key_pair" "lab_keypair" {
 }
 
 resource "aws_route53_record" "webserver" {
-  zone_id = aws_route53_zone.bryan_dobc.id
+  zone_id = aws_route53_zone.bashayr_dobc.id
   name    = "webserver"
   type    = "A"
   ttl     = 300
