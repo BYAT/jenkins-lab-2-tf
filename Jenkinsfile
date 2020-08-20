@@ -31,5 +31,10 @@ pipeline {
               sh 'make apply'
           }
       }
+      stage("apply") {
+          steps {
+              sh 'make down'
+          }
+      }
   }
 }
